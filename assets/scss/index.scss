@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+// 导航
+.title-nav {
+  background-color: transparent !important;
+
+  .navbar-collapse {
+    flex-grow: 0;
+
+    .nav-link {
+      color: hsla(0, 0%, 100%, 0.65);
+
+      &:hover {
+        color: #f2b535;
+      }
+    }
+
+    .navbar-nav .color-text {
+      color: #f2b535;
+
+      .fire {
+        background-image: url(../images/fire.png);
+      }
+    }
+  }
+}
+
+// 轮播图：小于768 图片高度250 max; 大于等于768 图片高度400 min; 大于等于992 图片高度500 min
+.carousel {
+  // 响应式，媒体查询
+  @media (max-width: 768px) {
+    .carousel-item {
+      height: 250px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .carousel-item {
+      height: 420px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .carousel-item {
+      height: 500px;
+    }
+
+    // 轮播图文字
+    // 左右
+    .carousel-item {
+      position: relative;
+      color: #fff;
+      font-weight: 200;
+
+      .text-right {
+        position: absolute;
+        top: 30%;
+        right: -20%;
+        margin: 0 0 10px;
+        text-align: center;
+        animation: right 2s forwards;
+        font-size: 40px;
+      }
+
+      .text-left {
+        position: absolute;
+        left: -30%;
+        bottom: 20%;
+        font-size: 50px;
+        animation: left 2s forwards;
+      }
+    }
+    // 上下
+    .carousel-item {
+      position: relative;
+      text-align: center;
+      color: #fff;
+      font-weight: 200;
+
+      .text-top {
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        font-size: 60px;
+        transform: translate(-50%, -50%);
+        animation: top 2s forwards;
+      }
+      .text-bottom {
+        vertical-align: bottom;
+        position: absolute;
+        bottom: -20%;
+        left: 50%;
+        font-size: 34px;
+        transform: translate(-50%, -50%);
+        animation: bottom 2s forwards;
+      }
+    }
+  }
+
+  .carousel-item {
+    // height: 500px;
+    background-size: cover;
+    background-position: center 0;
+
+    &:nth-child(1) {
+      background-image: url(../uploads/banner_1.jpg);
+    }
+    &:nth-child(2) {
+      background-image: url(../uploads/banner_2.jpg);
+    }
+    &:nth-child(3) {
+      background-image: url(../uploads/banner_3.jpg);
+    }
+    &:nth-child(4) {
+      background-image: url(../uploads/banner_4.jpg);
+    }
+  }
+
+  // 轮播图动画定义
+  @keyframes right {
+    0% {
+      opacity: 0;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-120%);
+    }
+  }
+  @keyframes left {
+    0% {
+      opacity: 0;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(300%);
+    }
+  }
+  @keyframes top {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateX(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateY(300%);
+    }
+  }
+  @keyframes bottom {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateX(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateY(-450%);
+    }
+  }
+}
+
+// 开源项目
+// 视口宽度大于992时一行排4个 col-lg-3
+// 视口宽度大于768时一行排2个 col-md-6
+
+.project {
+  margin-top: 60px;
+  padding-bottom: 40px;
+  text-align: center;
+
+  // 标题
+  .title {
+    font-size: 30px;
+    color: #494d55;
+
+    span {
+      margin-right: 10px;
+      font-weight: 100;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 45px;
+      color: #919191;
+    }
+  }
+
+  // 内容
+  .content {
+    .row div {
+      margin-bottom: 10px;
+      height: 200px;
+
+      // 块级的宽度和父级一样大
+      a {
+        display: block;
+        margin: 0 0 10px;
+        padding: 20px 10px;
+        height: 200px;
+        border-radius: 4px;
+        // text-decoration: none;
+        color: #fff;
+
+        // 文字
+        h3 {
+          margin: 20px 0 10px;
+          font-size: 24px;
+        }
+
+        p {
+          margin: 0 0 10px;
+          font-size: 14px;
+        }
+
+        .pic {
+          height: 100%;
+        }
+      }
+
+      &:nth-child(1) {
+        a {
+          background-color: #70c3ff;
+        }
+      }
+      &:nth-child(2) {
+        a {
+          background-color: #fd6a7f;
+        }
+      }
+      &:nth-child(3) {
+        a {
+          background-color: #7f8ea0;
+
+          img {
+            width: 60px;
+            height: 60px;
+          }
+        }
+      }
+      &:nth-child(4) {
+        a {
+          background-color: #89d04f;
+
+          img {
+            width: 60px;
+            height: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+// 更多开源
+.more {
+  padding: 10px;
+  height: 60px;
+  a {
+    display: block;
+    padding: 10px 16px;
+    margin: 0 auto;
+    width: 110px;
+    height: 40px;
+    color: #616161;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: #e1e1e1;
+  }
+}
+
+// 作品
+.product {
+  margin-top: 60px;
+  padding-bottom: 40px;
+  text-align: center;
+
+  // 标题
+  .title {
+    font-size: 30px;
+    color: #494d55;
+
+    span {
+      margin-right: 10px;
+      font-weight: 100;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 45px;
+      color: #919191;
+    }
+  }
+
+  // 内容
+  .content {
+    .row div {
+      a {
+        display: block;
+        margin: 0 0 10px;
+        height: 235px;
+        text-align: left;
+        color: #313131;
+        border: 1px solid #e4ecf3;
+        border-radius: 4px;
+        background-color: #fff;
+
+        .pic {
+          img {
+            width: 100%;
+            height: 165px;
+            vertical-align: middle;
+          }
+        }
+
+        p {
+          margin: 10px;
+          font-size: 14px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
