@@ -3,7 +3,7 @@ name: 部署静态资源
 on:
   # 当 master 分支有推送时执行
   push:
-    branches: ["master"]
+    branches: ["main"]
     
   # 允许手动运行此工作流程
   workflow_dispatch:
